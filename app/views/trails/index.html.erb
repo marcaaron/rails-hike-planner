@@ -3,13 +3,17 @@
 <ul class="trail-list">
   <% @trails.each do |trail| %>
     <li class="trail-list__item">
-      <%= trail.name %>
-      <%= link_to 'Show', trail_path(trail) %>
-      <%= link_to 'Edit', edit_trail_path(trail) %>
-      <%= link_to 'Delete', trail_path(trail),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %>
+      <p class="trail-list__item__title"><%= trail.name %></p>
+      <div class="trail-list__item__controls">
+        <%= link_to 'Show', trail_path(trail), class: 'btn' %>
+        <%= link_to 'Edit', edit_trail_path(trail), class: 'btn' %>
+        <%= link_to 'Delete', trail_path(trail), {
+                method: :delete,
+                data: { confirm: 'Are you sure?' },
+                class: 'btn'
+                } %>
+      </div>
     </li>
   <% end %>
 </ul>
-<%= link_to 'Back', root_path %>
+<%= link_to 'Back', root_path, class: 'btn' %>

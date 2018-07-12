@@ -1,33 +1,46 @@
-<h1>Trail</h1>
-<p>
-  <strong>Name:</strong>
-  <%= @trail.name %>
-</p>
+<h1>Trail Information</h1>
 
-<p>
-  <strong>Description:</strong>
-  <%= @trail.description %>
-</p>
+<div class="trail-info">
+  <p>
+    <strong>Name:</strong>
+    <%= @trail.name %>
+  </p>
 
-<p>
-  <strong>Latitude:</strong>
-  <%= @trail.latitude %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @trail.description %>
+  </p>
 
-<p>
-  <strong>Longitude:</strong>
-  <%= @trail.longitude %>
-</p>
+  <p>
+    <strong>Latitude:</strong>
+    <%= @trail.latitude %>
+  </p>
 
-<p>
-  <strong>Difficulty:</strong>
-  <%= @trail.difficulty %>
-</p>
+  <p>
+    <strong>Longitude:</strong>
+    <%= @trail.longitude %>
+  </p>
 
-<p>
-  <strong>Direction:</strong>
-  <%= @trail.direction %>
-</p>
+  <p>
+    <strong>Difficulty:</strong>
+    <div class="difficulty-marker"></div>
+    <% if @trail.difficulty > 1 %>
+      <div class="difficulty-marker"></div>
+    <% end %>
+    <% if @trail.difficulty > 2 %>
+      <div class="difficulty-marker"></div>
+    <% end %>
+  </p>
 
-<%= link_to 'Edit Trail', edit_trail_path(@trail) %>
-<%= link_to 'Back', trails_path %>
+  <p>
+    <strong>Direction:</strong>
+    <% if @trail.direction == 1 %>
+    Out & Back
+    <% else %>
+    Loop
+    <% end %>
+  </p>
+</div>
+
+<%= link_to 'Edit Trail', edit_trail_path(@trail), class:'btn' %>
+<%= link_to 'Back', trails_path, class:'btn' %>
