@@ -1,6 +1,6 @@
-<h1>Create a New Trail</h1>
+<h1>Update Trail</h1>
 
-<%= form_with scope: :trail, url: trails_path, class: 'trail-form', local: true do |form| %>
+<%= form_with(model: @trail, local: true, class: 'trail-form') do |form| %>
 
   <% if @trail.errors.any? %>
     <div id="error_explanation">

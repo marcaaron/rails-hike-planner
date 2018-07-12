@@ -5,6 +5,7 @@
     <li class="trail-list__item">
       <%= trail.name %>
       <%= link_to 'Show', trail_path(trail) %>
+      <%= link_to 'Edit', edit_trail_path(trail) %>
     </li>
   <% end %>
 </ul>
