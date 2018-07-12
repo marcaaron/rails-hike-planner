@@ -1,0 +1,22 @@
+// Place all the styles related to the Trails controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  text-align: center;
+}
+
+.trail-form {
+  @include flex-column;
+  max-width: 320px;
+  margin: 0 auto;
+  &__item{
+    @include flex-column;
+    padding: 20px;
+  }
+}

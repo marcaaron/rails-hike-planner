@@ -1,0 +1,41 @@
+<h1>Create a New Trail</h1>
+
+<%= form_with scope: :trail, url: trails_path, class: 'trail-form', local: true do |form| %>
+
+  <!-- Trail Name -->
+  <div class="trail-form__item">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <!-- Trail Description -->
+  <div class="trail-form__item">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <!-- Trail Start Coordinates -->
+  <div class="trail-form__item">
+    <%= form.label :latitude %>
+    <%= form.text_field :latitude %>
+    <%= form.label :longitude %>
+    <%= form.text_field :longitude %>
+  </div>
+
+  <!-- Trail Difficulty -->
+  <div class="trail-form__item">
+    <%= form.label :difficulty %>
+    <%= form.select(:difficulty, options_for_select([['Light', 1], ['Moderate', 2], ['Strenuous', 3]])) %>
+  </div>
+
+  <!-- Trail Direction -->
+  <div class="trail-form__item">
+    <%= form.label :direction %>
+    <%= form.select(:direction, options_for_select([['Out & Back', 1], ['Loop', 2]])) %>
+  </div>
+
+  <!-- Submit Button -->
+  <div class="trail-form__item">
+    <%= form.submit %>
+  </div>
+<% end %>
