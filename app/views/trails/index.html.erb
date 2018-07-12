@@ -6,6 +6,9 @@
       <%= trail.name %>
       <%= link_to 'Show', trail_path(trail) %>
       <%= link_to 'Edit', edit_trail_path(trail) %>
+      <%= link_to 'Delete', trail_path(trail),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
     </li>
   <% end %>
 </ul>

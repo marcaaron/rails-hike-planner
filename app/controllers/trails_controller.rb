@@ -35,6 +35,13 @@ class TrailsController < ApplicationController
     end
   end
 
+  def destroy
+    @trail = Trail.find(params[:id])
+    @trail.destroy
+    
+    redirect_to trails_path
+  end
+
   private
     def trail_params
       params.require(:trail)
