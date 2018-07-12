@@ -1,0 +1,11 @@
+<h2>Trails On Record</h2>
+
+<ul class="trail-list">
+  <% @trails.each do |trail| %>
+    <li class="trail-list__item">
+      <%= trail.name %>
+      <%= link_to 'Show', trail_path(trail) %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to 'Back', root_path %>
