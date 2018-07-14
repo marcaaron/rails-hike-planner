@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
 
+  http_basic_authenticate_with name: "user", password: "password", only: :destroy
+
   def create
     @trail = Trail.find(params[:trail_id])
     @comment = @trail.comments.create(comment_params)

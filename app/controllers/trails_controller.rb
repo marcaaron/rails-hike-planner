@@ -1,5 +1,7 @@
 class TrailsController < ApplicationController
 
+  http_basic_authenticate_with name: "user", password: "password", except: [:index, :show]
+
   def index
     @trails = Trail.all
   end
@@ -38,7 +40,7 @@ class TrailsController < ApplicationController
   def destroy
     @trail = Trail.find(params[:id])
     @trail.destroy
-    
+
     redirect_to trails_path
   end
 
