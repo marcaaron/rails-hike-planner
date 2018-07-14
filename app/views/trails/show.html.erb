@@ -44,3 +44,10 @@
 
 <%= link_to 'Edit Trail', edit_trail_path(@trail), class:'btn' %>
 <%= link_to 'Back', trails_path, class:'btn' %>
+
+<div class="comments-box">
+  <h2>Comments</h2>
+  <%= render @trail.comments %>
+  <h2> Add a comment </h2>
+  <%= render 'comments/form' %>
+</div>
